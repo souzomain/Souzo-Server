@@ -198,7 +198,7 @@ int send_telegram(char msg[]){
       goto end;
     char *b1 = curl_easy_escape(curl,msg,strlen(msg));
     char sender[1024];
-    sprintf(sender,"https://api.telegram.org/bot<APITOKEN>/sendMessage?chat_id=1259776308&text=%s",b1);
+    sprintf(sender,"https://api.telegram.org/bot<APITOKEN>/sendMessage?chat_id=&text=%s",b1);
     curl_easy_setopt(curl,CURLOPT_POSTFIELDS,sender);
     curl_easy_setopt(curl,CURLOPT_POSTFIELDSIZE,(long)strlen(sender));
     curl_easy_setopt(curl,CURLOPT_HTTPGET,1L);
